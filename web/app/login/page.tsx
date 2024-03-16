@@ -1,10 +1,14 @@
+'use client'
+import React from "react";
+import LoginButton from "../components/navigation/loginbutton";
 
-export default function login() {
-    return (
+const Login = () => {
 
-   <div className="">
-    <p>Login</p>
-   </div>
+  return (<>
+    <h1>Login</h1>
+    <LoginButton/>
+    <a href='/'>Home</a>
+  </>);
+};
 
-    );
-  }
+export default Login;
