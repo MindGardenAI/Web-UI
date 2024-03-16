@@ -1,5 +1,5 @@
 import Image from'next/image'
-import filler from '../../public/DefaultAvatar.png'
+import filler from '../../public/images/Default Avatar.png'
 import { useAuth0 } from "@auth0/auth0-react"
 
 const UserSection = () => {

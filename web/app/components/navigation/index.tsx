@@ -1,10 +1,12 @@
+'use client'
 import React from "react";
 import Link from "next/link";
 import Logo from "./logo";
-
 // import Button from "./button";
 
 const Navbar = () => {
+  const {isAuthenticated} = useAuth0()
+
   return (
     <>
       <div className="w-full h-20 navbar-color sticky top-0">
@@ -15,6 +17,22 @@ const Navbar = () => {
              
 
 
+
+              {/* <li>
+                <Link href="/about">
+                  <p>About Us</p>
+                </Link>
+              </li>
+              <li>
+                <Link href="/services">
+                  <p>Services</p>
+                </Link>
+              </li>
+              <li>
+                <Link href="/contacts">
+                  <p>Contacts</p>
+                </Link>
+              </li> */}
             </ul>
              
           </div>
