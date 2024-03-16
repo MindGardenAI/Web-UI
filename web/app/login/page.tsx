@@ -1,6 +1,6 @@
 'use client'
 import React from "react";
-import LoginButton from "../components/navigation/loginbutton";
+import LoginButton from "../components/loginButton/loginbutton";
 
 const Login = () => {
 

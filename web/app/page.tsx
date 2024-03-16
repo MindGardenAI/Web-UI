@@ -1,14 +1,11 @@
 'use client'
 import { useAuth0 } from "@auth0/auth0-react";
-import LogoutButton from "./components/navigation/logoutbutton";
+import LogoutButton from "./components/logoutButton/logoutbutton";
 
 export default function Page() {
   const {isAuthenticated} = useAuth0()
   return (
   <>
-      <p>kk</p>
-      
-      {isAuthenticated ? <a href='/login'>Login</a> : <LogoutButton/> } 
   </>
   );
 }
