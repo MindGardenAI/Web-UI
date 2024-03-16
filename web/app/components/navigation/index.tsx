@@ -1,9 +1,16 @@
+'use client'
 import React from "react";
 import Link from "next/link";
 import Logo from "./logo";
+import { link } from "fs";
+import LogoutButton from "../logoutButton/logoutbutton";
+import { useAuth0 } from "@auth0/auth0-react";
+
 // import Button from "./button";
 
 const Navbar = () => {
+  const {isAuthenticated} = useAuth0()
+
   return (
     <>
       <div className="w-full h-20 bg-emerald-800 sticky top-0">
@@ -11,7 +18,9 @@ const Navbar = () => {
           <div className="flex justify-between items-center h-full">
             <Logo />
             <ul className="hidden md:flex gap-x-6 text-white">
-             
+             <ul>
+             {!isAuthenticated ? <a href="/login">Login</a> : <LogoutButton/>}
+             </ul>
               {/* <li>
                 <Link href="/about">
                   <p>About Us</p>
