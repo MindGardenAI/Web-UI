@@ -12,7 +12,7 @@ export default function AuthProvider({
   domain="dev-yy8fgw47geoyejns.us.auth0.com"
   clientId="QSmpCjrskjzMOJXn4lUP61MqmG7ulXtm"
   authorizationParams={{
-      redirect_uri: window.location.origin
+      redirect_uri: 'https://mindgardenai.tech/'
   }}
   >
   {children}
