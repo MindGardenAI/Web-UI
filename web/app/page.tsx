@@ -7,8 +7,8 @@ export default function Page() {
   return (
   <>
       <p>kk</p>
-      <a href='/login'>Login</a>
-      {isAuthenticated && <LogoutButton/>}
+      
+      {isAuthenticated ? <a href='/login'>Login</a> : <LogoutButton/> } 
   </>
   );
 }
