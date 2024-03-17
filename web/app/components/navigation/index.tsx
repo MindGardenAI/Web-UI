@@ -35,6 +35,7 @@ const Navbar = () => {
       <div>
           <Logo/>
       </div>
+      <h1 className="flex z-10 justify-between items-center h-20 px-4 text-2xl text-black">Mind Garden AI</h1> 
 
       <ul className="hidden md:flex items-center">
       

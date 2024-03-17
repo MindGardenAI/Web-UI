@@ -4,6 +4,7 @@ import Link from 'next/link'
 import heroImage from '../public/images/heroimage.png'
 import Footer from './components/footer/footer';
 
+
 export default function Page() {
   return (
   <div className='flex flex-col'>

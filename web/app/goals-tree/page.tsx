@@ -4,14 +4,14 @@ import "./css.css";
 import TreeLeaf from "../components/TreeLeaf/TreeLeaf";
 import useGetGoals from "./useGetGoals";
 export default function goalsTree() {
-  var { data, isLoading, error} = useGetGoals();
+  // var { data, isLoading, error} = useGetGoals();
   //var goalsJson = JSON.parse(data);
 
   return (
     <div className="mx-auto px-4 pt-40">
       <div className="text-center">
         <h1 className="big font-thin mt-2">Goals</h1>
-        {!data ? <p>No Goals at the moment :(</p> :""}
+        {/* {!data ? <p>No Goals at the moment :(</p> :""} */}
       </div>
       <div className="flex  absolute inset-x-0 bottom-0 justify-center">
         <div className="flex flex-col">
