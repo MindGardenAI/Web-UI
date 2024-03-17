@@ -6,7 +6,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import LogoutButton from "../logoutButton/logoutbutton";
 const Navbar = () => {
     const [nav, setNav] = useState(false);
-    const {isAuthenticated} = useAuth0()
+    const {isAuthenticated,user} = useAuth0()
 
   const links = [
     {
@@ -44,8 +44,8 @@ const Navbar = () => {
           </li>
         ))}
         {!isAuthenticated && <li className="nav-links px-4 cursor-pointer capitalize font-medium text-black hover:scale-105 hover:text-white duration-200 link-underline"><a href="/login">Login</a></li>}
-        {isAuthenticated && <li className="nav-links px-4 cursor-pointer capitalize font-medium text-black hover:scale-105 hover:text-white duration-200 link-underline"><LogoutButton/></li>}
-      </ul>
+        {isAuthenticated && <li className="nav-links px-4 cursor-pointer capitalize font-medium text-black hover:scale-105 hover:text-white duration-200 link-underline"><LogoutButton/><p>({user?.nickname})</p></li>}
+      </ul> 
 
       <div
         onClick={() => setNav(!nav)}
@@ -64,7 +64,7 @@ const Navbar = () => {
               <a onClick={() => setNav(!nav)} href={link}>{title}</a>
             </li>
           ))}
-           {!isAuthenticated ? <li className="nav-links px-4 cursor-pointer capitalize font-medium text-black hover:scale-105 hover:text-white duration-200 link-underline"><a href="/login">Login</a></li> : <li className="nav-links px-4 cursor-pointer capitalize font-medium text-black hover:scale-105 hover:text-white duration-200 link-underline"><LogoutButton/></li>}
+           {!isAuthenticated ? <li className="px-4 cursor-pointer z-10 capitalize py-6 text-4xl"><a href="/login">Login</a></li> : <li className="px-4 cursor-pointer z-10 capitalize py-6 text-4xl"><LogoutButton/>({user?.nickname})</li>}
         </ul>
       }
     </div>
