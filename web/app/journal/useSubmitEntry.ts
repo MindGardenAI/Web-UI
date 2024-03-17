@@ -1,6 +1,7 @@
 import { useMutation } from "react-query"
 
 type AddJournalEntry = {
+    uid?: string
     title: string
     text: string
 }

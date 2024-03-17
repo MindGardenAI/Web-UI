@@ -3,11 +3,9 @@ import { useQuery } from "react-query"
 // Get today's journal section (Can be null)
 const getJournalEntry = () => {
     return fetch('',{
-        method: 'GET',
-        headers: {
-            "Content-Type": 'application/json'
-        },
-        body: JSON.stringify({})
+        method: 'GET'
+    }).then((res) => {
+        return res.json()
     })
 }
 
