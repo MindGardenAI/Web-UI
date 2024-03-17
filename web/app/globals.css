@@ -7,6 +7,10 @@ html{
   --secondary-color: #E8E6CF;
 }
 
+.button-txt-size{
+  font-size: '16px';
+}
+
 .navbar-color{
     background-color:var(--primary-color)
 }
