@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import { Manjari } from "next/font/google";
 import "./globals.css";
 import AuthProvider from "./authprovider";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 import Navbar from "./components/navigation";
 const inter = Manjari({ subsets: ['latin'], weight: ["100", "400", "700"] });
+const queryClient = new QueryClient();
 
 export const metadata: Metadata = {
   title: "Mind Garden AI",
@@ -21,7 +23,11 @@ export default function RootLayout({
         <body className={`${inter.className}`}>
           <div>
             <Navbar/>
-            <AuthProvider>{children}</AuthProvider>
+            <AuthProvider>
+              <QueryClientProvider client={queryClient}>
+                {children}
+              </QueryClientProvider>
+            </AuthProvider>
           </div>
         </body>
       </html>
