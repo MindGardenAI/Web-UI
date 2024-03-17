@@ -1,3 +1,4 @@
+'use client'
 import type { Metadata } from "next";
 import { Manjari } from "next/font/google";
 import "./globals.css";
