@@ -18,9 +18,11 @@ export default function RootLayout({
 }>) {
   return (
       <html lang="en">
-        <body className={inter.className}>
-          <Navbar/>
-          <AuthProvider>{children}</AuthProvider>
+        <body className={`${inter.className} bg-[#E8E6CF]`}>
+          <div className="container mx-auto">
+            <Navbar/>
+            <AuthProvider>{children}</AuthProvider>
+          </div>
         </body>
       </html>
   );
