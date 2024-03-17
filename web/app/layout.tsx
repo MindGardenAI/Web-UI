@@ -20,8 +20,8 @@ export default function RootLayout({
   return (
       <html lang="en">
         <body className={`${inter.className} bg-[var(--secondary-color)]`}>
-        <Navbar/>
           <AuthProvider>
+            <Navbar/>
             <QueryProvider>
               {children}
             </QueryProvider>

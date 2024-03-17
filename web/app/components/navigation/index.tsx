@@ -38,12 +38,13 @@ const Navbar = () => {
         {links.map(({ id, link, title }) => (
           <li
             key={id}
-            className="nav-links px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 hover:text-white duration-200 link-underline"
+            className="nav-links px-4 cursor-pointer capitalize font-medium text-black hover:scale-105 hover:text-white duration-200 link-underline"
           >
             <a href={link}>{title}</a>
           </li>
         ))}
-        {!isAuthenticated ? <a href="/login">Login</a> : <LogoutButton/>}
+        {!isAuthenticated && <li className="nav-links px-4 cursor-pointer capitalize font-medium text-black hover:scale-105 hover:text-white duration-200 link-underline"><a href="/login">Login</a></li>}
+        {isAuthenticated && <li className="nav-links px-4 cursor-pointer capitalize font-medium text-black hover:scale-105 hover:text-white duration-200 link-underline"><LogoutButton/></li>}
       </ul>
 
       <div
@@ -63,7 +64,7 @@ const Navbar = () => {
               <a onClick={() => setNav(!nav)} href={link}>{title}</a>
             </li>
           ))}
-           {!isAuthenticated ? <a href="/login">Login</a> : <LogoutButton/>}
+           {!isAuthenticated ? <li className="nav-links px-4 cursor-pointer capitalize font-medium text-black hover:scale-105 hover:text-white duration-200 link-underline"><a href="/login">Login</a></li> : <li className="nav-links px-4 cursor-pointer capitalize font-medium text-black hover:scale-105 hover:text-white duration-200 link-underline"><LogoutButton/></li>}
         </ul>
       }
     </div>
