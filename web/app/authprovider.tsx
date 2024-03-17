@@ -13,7 +13,9 @@ export default function AuthProvider({
   domain="dev-yy8fgw47geoyejns.us.auth0.com"
   clientId="QSmpCjrskjzMOJXn4lUP61MqmG7ulXtm"
   authorizationParams={{
-      redirect_uri: base_url
+      redirect_uri: base_url,
+      audience: "https://dev-yy8fgw47geoyejns.us.auth0.com/api/v2/",
+      scope: "read:current_user update:current_user_metadata"
   }}
   >
   {children}

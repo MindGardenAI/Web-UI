@@ -25,10 +25,10 @@ const TodayEntry = () => {
 
   return (
     <div className="flex flex-col mx-auto">
-      <div className="justify-center w-full">
+      <div className="justify-center mx-[5%]">
         <form className="">
           <label htmlFor="Journal"></label>
-          <textarea className="w-full h-8" placeholder="Go on write something..." name="Journal" id="Journal" onChange={(e)=>{setContent(e.target.value)}} value={content}></textarea>
+          <textarea className="w-full h-8 p-1" placeholder="Go on write something..." name="Journal" id="Journal" onChange={(e)=>{setContent(e.target.value)}} value={content}></textarea>
         </form>
       </div>
       <div className="mx-auto my-5 justify-center items-center">
