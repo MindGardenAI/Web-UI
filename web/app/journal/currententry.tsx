@@ -1,5 +1,5 @@
 'use client'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useGetEntry } from "./useGetEntry"
 import useSubmitEntry from "./useSubmitEntry";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -7,14 +7,18 @@ import { useAuth0 } from "@auth0/auth0-react";
 const TodayEntry = () => {
   const {user} = useAuth0();
   const [content, setContent] = useState('')
-  const [entry, setEntry] = useState(null);
-  const {data} = useGetEntry();
+  const [entry, setEntry] = useState<any>(null);
+  const {mutateAsync: getEntry} = useGetEntry()
   const {mutate} = useSubmitEntry();
 
-  if(data){
-    setEntry(data);
-    setContent(data['text'])
-  }
+  useEffect(() => {
+    if(user?.sub){
+      getEntry(user.sub).then((res)=>{
+        setEntry(res[0])
+        setContent(res[0].body)
+      })
+    }
+  }, [user])
 
   return (
     <div className="flex flex-col mx-auto">

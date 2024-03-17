@@ -2,7 +2,7 @@ import useGetAffirmation from "./useGetAffirmation"
 
 const DailyMentalHealth = () => {
   const {data, isLoading} = useGetAffirmation()
-  console.log(data)
+  console.log(data )
   return (
     <div className="bg-[var(--primary-color)] rounded-[8rem] flex flex-col p-8 drop-shadow-xl">
         <div>
