@@ -10,10 +10,10 @@ const Journal = () => {
           <h2 className='text-2xl font-thin'>{new Date().toDateString()}</h2>
           <hr className='border-black border-1 mb-4'/>
         </div>
-        <div className='container mx-auto'>
+        <div className='container mx-auto drop-shadow-lg'>
           <TodayEntry/>
         </div>
-        <div className='container mx-auto'>
+        <div className='container mx-auto drop-shadow-lg'>
           <Studies/>
         </div>
     </div>
