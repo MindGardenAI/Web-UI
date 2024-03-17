@@ -17,12 +17,12 @@ const Navbar = () => {
     {
       id:2,
       link:"/goals-tree",
-      title:"goals"
+      title:"Goals"
     },
     {
       id:3,
       link:"/journal",
-      title:"goals"
+      title:"Journal"
     }
     
   ];
