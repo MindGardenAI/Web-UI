@@ -15,7 +15,7 @@ export default function Page() {
       <Link href='/login'><button className="font-bold drop-shadow-md bg-[var(--primary-color)] w-[156px] h-[76px] rounded-2xl">Get Started</button></Link>
     </div>
     <div className='mx-auto w-[67%] z-[-1]'>
-    <Image className=' mx-auto rounded-full drop-shadow-xl my-10' src={heroImage} width={470} height={470} alt="Woman surrounded by plants" />
+    <Image className=' mx-auto rounded-full border-8 border-white drop-shadow-xl my-10' src={heroImage} width={470} height={470} alt="Woman surrounded by plants" />
     </div>
     <Footer/>
   </div>
