@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from 'next/image'
 import { FaBars, FaTimes } from "react-icons/fa";
 import Logo from "./logo";
@@ -7,9 +7,42 @@ import { useAuth0 } from "@auth0/auth0-react";
 import LogoutButton from "../logoutButton/logoutbutton";
 import defaultAvatar from '../../../public/images/Default Avatar.png'
 const Navbar = () => {
-    const [nav, setNav] = useState(false);
-    const {user, isAuthenticated} = useAuth0()
-    const profile = user?.picture || defaultAvatar;
+  const [nav, setNav] = useState(false);
+  const {user, isAuthenticated, getAccessTokenSilently} = useAuth0()
+
+  const [userMetadata, setUserMetadata] = useState<any>(null);
+
+  useEffect(() => {
+    const getUserMetadata = async () => {
+      if(!!user){
+        const domain = "dev-yy8fgw47geoyejns.us.auth0.com";
+    
+        const accessToken = await getAccessTokenSilently({
+          authorizationParams: {
+            audience: `https://${domain}/api/v2/`,
+            scope: "read:current_user",
+          },
+        });
+
+        const userDetailsByIdUrl = `https://${domain}/api/v2/users/${user.sub}`;
+
+        const metadataResponse = await fetch(userDetailsByIdUrl, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        });
+
+        const user_metadata = await metadataResponse.json();
+        setUserMetadata(user_metadata);
+      }
+    };
+  
+    getUserMetadata();
+  }, [user?.sub]);
+
+  const profile = userMetadata?.picture || defaultAvatar;
+
+  
 
   const links = [
     {
