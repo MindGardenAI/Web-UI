@@ -4,7 +4,7 @@ import Studies from './studies'
 
 const Journal = () => {
   return (
-    <div>
+    <div className='container'>
         <h1>Journal</h1>
         <h2>{new Date().toDateString()}</h2>
         <TodayEntry/>

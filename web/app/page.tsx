@@ -11,7 +11,7 @@ export default function Page() {
       <h1 className="font-thin text-xl sm:text-2xl lg:text-3xl">Set goals, journal, while practicing thoughtfulness and gratitude</h1>
     </div>
     <div className='mx-auto'>
-      <Link href='/signup'><button className="font-bold bg-[var(--primary-color)] w-[156px] h-[76px] rounded-2xl">Get Started</button></Link>
+      <Link href='/login'><button className="font-bold bg-[var(--primary-color)] w-[156px] h-[76px] rounded-2xl">Get Started</button></Link>
     </div>
     <div className='mx-auto w-[67%] z-[-1]'>
     <Image className=' mx-auto rounded-full drop-shadow-lg my-10' src={heroImage} width={480} height={480} alt="Woman surrounded by plants" />

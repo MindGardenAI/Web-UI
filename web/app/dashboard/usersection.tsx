@@ -10,10 +10,14 @@ const UserSection = () => {
   }
 
   return (
-    isAuthenticated && <div>
-      <Image src={user?.picture || filler} alt='' width={480} height={480}/>
-      <h2>{user?.name}</h2>
-      <p>{user?.email}</p>
+    isAuthenticated && <div className='bg-[var(--primary-color)] rounded-[8rem] flex flex-col p-8'>
+      <div className='justify-center items-center my-8'>
+        <Image className='rounded-full mx-auto' src={user?.picture || filler} alt='' width={300} height={300}/>
+      </div>      
+      <div className='justify-center items-center mx-auto text-center'>
+        <h1 className='text-[48px]'>{user?.name}</h1>
+        <h2 className='text-[30px]'>{user?.email}</h2>
+      </div>
     </div>
   )
 }
