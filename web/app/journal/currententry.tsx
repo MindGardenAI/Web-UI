@@ -14,8 +14,11 @@ const TodayEntry = () => {
   useEffect(() => {
     if(user?.sub){
       getEntry(user.sub).then((res)=>{
-        setEntry(res[0])
-        setContent(res[0].body)
+        if(res.length !== 0){
+          setEntry(res[0])
+          setContent(res[0].body)
+        }
+        
       })
     }
   }, [user])
