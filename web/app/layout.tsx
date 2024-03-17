@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Manjari } from "next/font/google";
 import "./globals.css";
 import AuthProvider from "./authprovider";
 
 import Navbar from "./components/navigation";
-const inter = Inter({ subsets: ["latin"] });
+const inter = Manjari({ subsets: ['latin'], weight: ["100", "400", "700"] });
 
 export const metadata: Metadata = {
   title: "Mind Garden AI",
@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
       <html lang="en">
         <body className={`${inter.className} bg-[#E8E6CF]`}>
-          <div className="container mx-auto">
+          <div>
             <Navbar/>
             <AuthProvider>{children}</AuthProvider>
           </div>

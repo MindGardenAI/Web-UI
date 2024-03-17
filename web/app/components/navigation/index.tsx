@@ -13,11 +13,14 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="w-full h-20 navbar-color sticky top-0">
+      <div className="w-full h-20 bg-[#A7B897] sticky top-0">
         <div className="container mx-auto px-4 h-full">
           <div className="flex justify-between items-center h-full">
-            <Logo />
-            <ul className="hidden md:flex gap-x-6 text-white">
+            <div className="flex gap-4 justify-start items-center">
+              <Logo />
+              <p className="inline h-min text-[16pt]">Mind Garden AI</p>
+            </div>
+            <ul className="hidden md:flex gap-x-6 text-white font-bold">
              <ul>
              {!isAuthenticated ? <a href="/login">Login</a> : <LogoutButton/>}
              </ul>
