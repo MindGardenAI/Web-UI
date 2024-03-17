@@ -2,8 +2,11 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Logo from "./logo";
+import { useAuth0 } from "@auth0/auth0-react";
+import LogoutButton from "../logoutButton/logoutbutton";
 const Navbar = () => {
     const [nav, setNav] = useState(false);
+    const {isAuthenticated} = useAuth0()
 
   const links = [
     {
@@ -26,6 +29,7 @@ const Navbar = () => {
       </div>
 
       <ul className="hidden md:flex">
+      
         {links.map(({ id, link, title }) => (
           <li
             key={id}
@@ -34,6 +38,7 @@ const Navbar = () => {
             <a href={link}>{title}</a>
           </li>
         ))}
+        {!isAuthenticated ? <a href="/login">Login</a> : <LogoutButton/>}
       </ul>
 
       <div
@@ -53,6 +58,7 @@ const Navbar = () => {
               <a onClick={() => setNav(!nav)} href={link}>{title}</a>
             </li>
           ))}
+           {!isAuthenticated ? <a href="/login">Login</a> : <LogoutButton/>}
         </ul>
       }
     </div>
