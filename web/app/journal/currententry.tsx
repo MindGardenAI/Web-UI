@@ -25,7 +25,7 @@ const TodayEntry = () => {
         </form>
       </div>
       <div className="mx-auto my-5 justify-center items-center">
-          <button onClick={()=>{mutate({title: `Entry ${new Date().toDateString()}`, text: content, uid: user?.sub})}} className="font-bold bg-[var(--primary-color)] w-[156px] h-[76px] rounded-2xl">{!!entry ? 'Edit' : 'Submit'}</button>
+          <button onClick={()=>{mutate({title: `Entry ${new Date().toDateString()}`, body: content, uid: user?.sub})}} className="font-bold bg-[var(--primary-color)] w-[156px] h-[76px] rounded-2xl">{!!entry ? 'Edit' : 'Submit'}</button>
       </div>
     </div>
   )

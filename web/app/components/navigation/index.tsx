@@ -48,7 +48,7 @@ const Navbar = () => {
         ))}
         {!isAuthenticated && <li className="nav-links px-4 cursor-pointer capitalize font-medium text-black hover:scale-105 hover:text-white duration-200 link-underline"><a href="/login">Login</a></li>}
         {isAuthenticated && <li className="nav-links px-4 cursor-pointer capitalize font-medium text-black hover:scale-105 hover:text-white duration-200 link-underline"><LogoutButton/></li>}
-        {isAuthenticated && <li><a href='/dashboard'><Image className="w-[40px] h-[40px] rounded-full" src={profile} width={40} height={40} alt='profile picture'></Image></a></li>}
+        {isAuthenticated && <li><a href='/dashboard'><Image className="w-[40px] h-[40px] ml-2 rounded-full" src={profile} width={40} height={40} alt='profile picture'></Image></a></li>}
       </ul>
 
       <div

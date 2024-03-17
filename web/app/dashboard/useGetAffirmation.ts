@@ -5,11 +5,11 @@ const API_URL = process.env['NEXT_PUBLIC_API_URL']
 const getAffirmation = () => {
     return fetch(`${API_URL}/singleaffirmation`,{
         method: 'GET',
-        mode: 'cors',
         headers: {
-            "content-type": 'application/json',
             "Access-Control-Allow-Origin": '*'
         }
+    }).then((res) => {
+        return res.text()
     })
 }
 

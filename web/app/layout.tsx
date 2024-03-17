@@ -9,7 +9,7 @@ const inter = Manjari({ subsets: ['latin'], weight: ["100", "400", "700"] });
 
 export const metadata: Metadata = {
   title: "Mind Garden AI",
-description: "A way to grow happiness with yourself",
+  description: "A way to grow happiness with yourself"
 };
 
 export default function RootLayout({
@@ -19,6 +19,7 @@ export default function RootLayout({
 }>) {
   return (
       <html lang="en">
+        <link rel="icon" href="./favicon.ico" sizes="any" />
         <body className={`${inter.className} bg-[var(--secondary-color)]`}>
           <AuthProvider>
             <Navbar/>

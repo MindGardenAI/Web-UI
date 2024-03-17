@@ -5,7 +5,7 @@ const API_URL = process.env['NEXT_PUBLIC_API_URL']
 type AddJournalEntry = {
     uid?: string
     title: string
-    text: string
+    body: string
 }
 
 const submitEntry = (info: AddJournalEntry) => {
