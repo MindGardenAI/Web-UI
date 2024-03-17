@@ -1,58 +1,74 @@
 'use client'
-import React from "react";
 import Link from "next/link";
+import React, { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 import Logo from "./logo";
-import { link } from "fs";
-import LogoutButton from "../logoutButton/logoutbutton";
-import { useAuth0 } from "@auth0/auth0-react";
-
-// import Button from "./button";
-
 const Navbar = () => {
-  const {isAuthenticated} = useAuth0()
+    const [nav, setNav] = useState(false);
+
+  const links = [
+    {
+      id: 1,
+      link: "/",
+      title:"Home"
+    },
+    {
+      id:2,
+      link:""
+    }
+    
+  ];
 
   return (
-    <>
-      <div className="w-full h-20 bg-[#A7B897] sticky top-0">
-        <div className="container mx-auto px-4 h-full">
-          <div className="flex justify-between items-center h-full">
-            <div className="flex gap-4 justify-start items-center">
-              <Logo />
-              <p className="inline h-min text-[25pt]">Mind Garden AI</p>
-            </div>
-            <ul className="flex">
-              <a className="pr-4 font-bold" href="">DashBoard</a>
+    <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-[var(--primary-color)] fixed nav">
+      <div>
+        {/* <h1 className="text-5xl font-signature ml-2"><a className="link-underline hover:transition ease-in-out delay-150 hover:underline hover:decoration-solid" href="">Logo</a></h1> */}
+        <h1 className="text-5xl font-signature ml-2">
+          <a
+            className="link-underline link-underline-black"
+            href=""
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Logo/>
+          </a>
 
-              <a className="pr-4 font-bold" href="">Journal</a>
-
-              <a className="pr-4 font-bold" href="">Goal Tree</a>
-            </ul>
-            
-            <ul className="hidden md:flex gap-x-6 text-white font-bold">
-             <ul>
-             {!isAuthenticated ? <a href="/login">Login</a> : <LogoutButton/>}
-             </ul>
-              {/* <li>
-                <Link href="/about">
-                  <p>About Us</p>
-                </Link>
-              </li>
-              <li>
-                <Link href="/services">
-                  <p>Services</p>
-                </Link>
-              </li>
-              <li>
-                <Link href="/contacts">
-                  <p>Contacts</p>
-                </Link>
-              </li> */}
-            </ul>
-             
-          </div>
-        </div>
+        </h1>
       </div>
-    </>
+
+      <ul className="hidden md:flex">
+        {links.map(({ id, link, title }) => (
+          <li
+            key={id}
+            className="nav-links px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 hover:text-white duration-200 link-underline"
+          >
+            <Link href={link}>{title}</Link>
+          </li>
+        ))}
+      </ul>
+
+      <div
+        onClick={() => setNav(!nav)}
+        className="cursor-pointer pr-4 z-10 text-gray-500 md:hidden"
+      >
+        {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
+      </div>
+
+      {nav && (
+        <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-800 text-gray-500">
+          {links.map(({ id, link, title }) => (
+            <li
+              key={id}
+              className="px-4 cursor-pointer capitalize py-6 text-4xl"
+            >
+              <Link onClick={() => setNav(!nav)} href={link}>
+                {title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 };
 
