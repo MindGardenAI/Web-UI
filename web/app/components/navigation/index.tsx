@@ -20,7 +20,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-[var(--primary-color)] fixed nav">
+    <div className="flex z-10 justify-between items-center w-full h-20 px-4 text-white bg-[var(--primary-color)] fixed nav">
       <div>
           <Logo/>
       </div>

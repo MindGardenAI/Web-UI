@@ -10,7 +10,7 @@ const UserSection = () => {
   }
 
   return (
-    isAuthenticated && <div className='bg-[var(--primary-color)] rounded-[8rem] flex flex-col p-8'>
+    isAuthenticated && <div className='bg-[var(--primary-color)] rounded-[8rem] flex flex-col p-8 drop-shadow-xl'>
       <div className='justify-center items-center my-8'>
         <Image className='rounded-full mx-auto' src={user?.picture || filler} alt='' width={300} height={300}/>
       </div>      
