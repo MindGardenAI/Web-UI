@@ -1,5 +1,7 @@
 import { useMutation } from "react-query"
 
+const API_URL = process.env['NEXT_PUBLIC_API_URL']
+
 type AddJournalEntry = {
     uid?: string
     title: string
@@ -7,7 +9,7 @@ type AddJournalEntry = {
 }
 
 const submitEntry = (info: AddJournalEntry) => {
-    return fetch('',
+    return fetch(`${API_URL}/add_entry`,
     {
         method:'POST',
         headers: {
