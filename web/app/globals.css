@@ -8,7 +8,7 @@ html{
 }
 
 .navbar-color{
-    background-color:rgb(167,184,151);
+    background-color:var(--primary-color)
 }
 /* styles/globals.css */
 html,
@@ -17,4 +17,7 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
+  
 }
+
+

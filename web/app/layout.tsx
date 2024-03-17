@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
       <html lang="en">
-        <body className={`${inter.className} bg-[#E8E6CF]`}>
+        <body className={`${inter.className}`}>
           <div>
             <Navbar/>
             <AuthProvider>{children}</AuthProvider>
