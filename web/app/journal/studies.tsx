@@ -1,3 +1,4 @@
+
 const Studies = () => {
   return (
     <div>

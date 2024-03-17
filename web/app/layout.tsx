@@ -20,14 +20,12 @@ export default function RootLayout({
   return (
       <html lang="en">
         <body className={`${inter.className} bg-[var(--secondary-color)]`}>
-          <div>
-            <Navbar/>
-            <AuthProvider>
-              <QueryProvider>
-                {children}
-              </QueryProvider>
-            </AuthProvider>
-          </div>
+        <Navbar/>
+          <AuthProvider>
+            <QueryProvider>
+              {children}
+            </QueryProvider>
+          </AuthProvider>
         </body>
       </html>
   );
